@@ -1,7 +1,7 @@
+import "./slider.css";
 import React, { useEffect, useState } from "react";
 import { traerPeliculas } from "../../service/traerPeliculas/traerPeliculas.js";
 
-import "./slider.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
@@ -32,7 +32,7 @@ function Slider() {
         grabCursor={true}
         centeredSlides={true}
         loop={true}
-        slidesPerView={"auto"}
+        slidesPerView={5}
         coverflowEffect={{
           rotate: 0,
           stretch: 0,
@@ -54,9 +54,9 @@ function Slider() {
             <SwiperSlide key={index}>
 
               <img src={URL_IMAGE + pelicula.poster_path} alt="slide_image" />
-              <h1>{pelicula.title}</h1>
+              {/* <h1>{pelicula.title}</h1>
               <span>Título en inglés:{pelicula.original_title}</span>
-              <span>Esteno:{pelicula.release_date}</span>
+              <span>Esteno:{pelicula.release_date}</span> */}
             </SwiperSlide>
           ))
 
