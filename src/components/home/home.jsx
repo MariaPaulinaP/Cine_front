@@ -4,8 +4,18 @@ import Banner from '../banner/banner'
 function Home() {
   return (
     <>
-    <h1>prueba</h1>
-    <Banner />
+    <div className='header'>
+
+    </div>
+
+    <div className='banner'>
+      <Banner />
+    </div>
+
+    <div className='main'>
+
+    </div>
+   
     </>
   )
 }

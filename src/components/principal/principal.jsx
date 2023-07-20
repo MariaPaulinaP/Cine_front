@@ -1,14 +1,13 @@
 import React from 'react'
-// import Home from '../home/home'
-import Slider from '../slider/slider'
+import Home from '../home/home'
+
 
 function Principal() {
   return (
     <>
-    <Slider />
+    <Home />
     </>
   )
 }
-
 
 export default Principal
