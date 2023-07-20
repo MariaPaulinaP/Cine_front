@@ -1,7 +1,7 @@
+import "./slider.css";
 import React, { useEffect, useState } from "react";
 import { traerPeliculas } from "../../service/traerPeliculas/traerPeliculas.js";
 
-import "./slider.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
