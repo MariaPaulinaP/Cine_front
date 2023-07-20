@@ -42,7 +42,7 @@ function Slider() {
         navigation={{
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
-          clickable: true,
+          clickable: false,
         }}
         autoplay={{
           delay: 3000, // Tiempo de espera entre cada transición en milisegundos (3 segundos en este ejemplo)
