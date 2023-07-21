@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { traerPeliculas } from '../../service/traerPeliculas/traerPeliculas';
 import './card.scss';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -17,6 +18,9 @@ const Card = () => {
         const data = await traerPeliculas();
         setData(data);
     }
+
+    const navigate =  useNavigate()
+    
     
 return (
     <>
@@ -24,7 +28,9 @@ return (
         <section className='container__main'>
             {
                 data.map((pelicula, index) => (
-                    <div key={index} className='container__div'>
+                    <div key={index} className='container__div' onClick={() => {
+                        navigate(`/DetallesPeliculas/${pelicula.title}`);
+                      }}>
                         <img src={URL_IMAGE + pelicula.poster_path} alt="" className='imagen__pelicula'/>
                         <br/>
                         <h3>{pelicula.title}</h3>
