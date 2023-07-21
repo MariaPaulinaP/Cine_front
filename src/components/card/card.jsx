@@ -24,11 +24,12 @@ return (
         <section className='container__main'>
             {
                 data.map((pelicula, index) => (
-                    <div key={index}>
+                    <div key={index} className='container__div'>
                         <img src={URL_IMAGE + pelicula.poster_path} alt="" className='imagen__pelicula'/>
-                        <h5>{pelicula.title}</h5>
-
-                        <p>{"titulo en ingles:  " + pelicula.original_title}</p>
+                        <br/>
+                        <h3>{pelicula.title}</h3>
+                        <br/>
+                        <p>{"Titulo en ingles:  " + pelicula.original_title}</p>
                         <p>{"Estreno:  " + pelicula.release_date}</p>
                         <p>{"Genero:  " + pelicula.title}</p>
                         

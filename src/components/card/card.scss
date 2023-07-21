@@ -3,10 +3,28 @@
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    div{
-        width: 24%;
+    .container__div{
+        width: 22%;
+        padding: 20px 20px 60px 20px;
+        border-radius: 10px;
+        background: rgb(255, 254, 254);
+        border: none;
+        box-shadow: 8px 3px 13px -2px #dfd8d8;
+        margin: 10px;
+        border: none;
+        .imagen__pelicula{
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 14px;
+        }
     }
-    .imagen__pelicula{
-        width: 100%;
+    .container__div:hover{
+        box-shadow: 3px 1px 18px 2px;
+        cursor: pointer;
+        .imagen__pelicula{
+            transform:scale(1.1);
+            transition: 1s;
+        }
     }
+    
 }
