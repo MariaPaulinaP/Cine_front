@@ -1,12 +1,13 @@
 import React from 'react'
 import Slider from '../slider/slider'
+import './banner.scss'
 
 function Banner() {
 
     return (
-        <>
-        <Slider />
-        </>
+        <div className='banner'>
+            <Slider />
+        </div>
     )
 }
 

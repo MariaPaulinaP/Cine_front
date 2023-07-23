@@ -1,23 +1,16 @@
 import React from 'react'
 import Banner from '../banner/banner'
 import Card from '../card/card'
+import Header from '../header/header'
 
 function Home() {
   return (
     <>
-    <div className='header'>
-
-    </div>
-
-    <div className='banner'>
-      <Banner />
-    </div>
-
-    <div className='main'>
-      <Card />
-    </div>
-   
+       <Header/>
+       <Banner />
+       <Card />
     </>
+   
   )
 }
 
