@@ -1,21 +1,13 @@
 import React from 'react'
 import Banner from '../banner/banner'
+import Header from '../header/header'
 
 function Home() {
   return (
     <>
-    <div className='header'>
+       <Header/>
+       <Banner />
 
-    </div>
-
-    <div className='banner'>
-      <Banner />
-    </div>
-
-    <div className='main'>
-
-    </div>
-   
     </>
   )
 }
