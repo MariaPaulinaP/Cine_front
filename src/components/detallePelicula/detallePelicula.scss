@@ -1,0 +1,115 @@
+
+.detalles{
+    margin-top: 5rem;
+    margin-left: 5rem;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    .detalles__pelicula{
+       width: 50%;
+       display: flex;
+       align-items: flex-start;
+       gap: 3rem;
+       img{
+        width: 10%;
+        height: 95%;
+        gap: 20px
+       }
+       .info__titulo{
+        margin-bottom: 1rem;
+       }
+       .info__pelicula{
+        margin: 5px;
+        margin-top: 15px;
+        display: flex;
+        gap: 15px;
+        
+        .span__infoB{
+            background-color: rgb(70, 70, 70);
+            color: white;
+            border-radius: 5px;
+            inline-size: max-content;
+            padding: 6px;
+        }
+        .span__infoDuracion{
+            background-color: rgb(0, 0, 0);
+            color: white;
+            border-radius: 5px;
+            inline-size: max-content;
+            padding: 6px;
+        }
+        .span__infoGenero{
+            background-color: rgb(9, 31, 89);
+            color: white;
+            border-radius: 5px;
+            inline-size: max-content;
+            padding: 6px;
+        }
+       }
+       
+       span{
+        width: 40px;
+        height: 30px;
+        border: 1px solid #2123a4;
+        color: rgb(0, 0, 0);
+        border-radius: 10px;
+        border: none;
+
+
+       }
+    }
+    .detalles__funcion{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        .detalles__funcion__titulo{
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        .centro__comercial{
+            font-weight: bolder;
+            margin-top: 10px;
+        }
+        .boleto{
+            width: 70%;
+            height: 30%;
+            background-color: rgb(141, 141, 141);
+            color: white;
+            border-radius: 15px;
+            border: none;
+            padding: 10px
+        }
+        .btn-horas{
+            color: rgb(123, 123, 123);
+            border: 1px solid rgb(123, 123, 123);
+            border-radius: 10px;
+            padding: 8px;
+            width: 12%;
+            height: 8%;
+            margin: 20px 0
+        }
+        .btn-horas:hover{
+            background-color:#21232a;
+            color: white;
+        }
+        .boleto:hover{
+            background-color:rgb(9, 31, 89);
+            color: white;
+        }
+    }
+}
+
+.trailer{
+    margin-left: 5rem;
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+.sinopsis{
+    margin-left: 5rem;
+    &__titulo{
+        font-weight: bolder;
+        font-size: 18px;
+    }
+}

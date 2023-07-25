@@ -3,6 +3,7 @@ import Banner from '../banner/banner'
 import Card from '../card/card'
 import Header from '../header/header'
 import Trailer from '../trailer/Trailer'
+import { Outlet } from 'react-router-dom'
 
 function Home() {
   return (
@@ -11,6 +12,11 @@ function Home() {
        <Banner />
        {/* <Card /> */}
        <Trailer />
+       <div>
+          <Header/>
+          <Banner />
+       </div>
+       <Outlet />
     </>
    
   )
