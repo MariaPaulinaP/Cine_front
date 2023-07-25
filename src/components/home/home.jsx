@@ -2,13 +2,16 @@ import React from 'react'
 import Banner from '../banner/banner'
 import Card from '../card/card'
 import Header from '../header/header'
+import { Outlet } from 'react-router-dom'
 
 function Home() {
   return (
     <>
-       <Header/>
-       <Banner />
-       <Card />
+       <div>
+          <Header/>
+          <Banner />
+       </div>
+       <Outlet />
     </>
    
   )
