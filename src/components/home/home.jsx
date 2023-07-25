@@ -9,7 +9,7 @@ function Home() {
     <>
        <Header/>
        <Banner />
-       <Card />
+       {/* <Card /> */}
        <Trailer />
     </>
    
