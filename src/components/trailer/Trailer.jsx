@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import infoVideos from '../../service/traerVideos/TraerVideos'
 import ReactPlayer from 'react-player'
+import { element, number } from 'prop-types'
 
 
 
@@ -11,28 +12,34 @@ const Trailer = () => {
     const [posicion, setposicion] = useState([])
     const [generos, setgeneros] = useState("")
     const [tiempo, settiempo] = useState("")
-    // const [edpoint, setedpoint] = useState("")  /* aqui va el id que viene de la pelicula */
+    const [edpoint, setedpoint] = useState("")  /* aqui va el id que viene de la pelicula */
 
     useEffect(() => {
         multimedia()
     }, [])
-
-    const idPelicula = "569094"
-
+    
+    const idPelicula = "346698"
+    const nombre = "Trailer"
+    
+    const idNumero = posicion.findIndex((element) => element.type == nombre);
+    console.log(typeof(idNumero));
+    
     const multimedia = async() => {
+
         const data = await infoVideos(idPelicula)
-        const key = data.videos.results[12].key
+        const key = data.videos.results[1].key
+        // const key2 = key.key
         const genero = data.genres[0].name
         const duracion = data.runtime
-        // const numero = data.videos.results
+        const numero = data.videos.results
         setmedia(key)
         setgeneros(genero)
         settiempo(duracion)
-        // setposicion(numero)
-        
+        setposicion(numero)
+        // console.log(key2);
     }
 
-    // console.log(posicion.find("official"));
+
     return (
         <>
             <ReactPlayer
