@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import infoVideos from '../../service/traerVideos/TraerVideos'
 import ReactPlayer from 'react-player'
-import { element, number } from 'prop-types'
-
-
 
 
 const Trailer = () => {

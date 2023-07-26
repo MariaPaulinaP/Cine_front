@@ -2,7 +2,6 @@ import { json } from "react-router-dom"
 
 export const addMovieLocalStorage = (pelicula) =>{
     localStorage.setItem("peliculaClick",JSON.stringify(pelicula))
-
 }
 
 export const removeFromLocalStorage = () => {
