@@ -1,13 +1,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Router from './Router/Router'
+import Asientos from './components/asientos/Asientos'
+// import Router from './Router/Router'
 
 
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <>
-  <Router />
+  {/* <Router /> */}
+  <Asientos/>
   </>
   
 )
