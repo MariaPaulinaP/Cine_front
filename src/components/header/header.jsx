@@ -1,28 +1,48 @@
 import React, { useEffect, useState } from 'react'
 import './header.scss'
-import { traerBack } from '../../service/traerBack/traerBack'
+import { traerFunciones, traerTeatros } from '../../service/traerBack/traerBack.js'
 
 const Header = () => {
  
-  const [Back, setBack] = useState([])
-  const [value, setvalue] = useState(null)
+  const [teatro, setTeatro] = useState([])
+  const [funcion, setfuncion] = useState([])
+  const [value, setvalue] = useState({})
+  const [valueFecha, setValueFecha] = useState({})
 
   useEffect(()=>{
-    traerDataBack()
+    traerDataTeatro()
+    traerDataFuncion()
   }, [])
 
-  const traerDataBack = async () =>{
-    const dataBack = await traerBack()
-    setBack(dataBack)
+  const traerDataTeatro = async () =>{
+    const dataBack = await traerTeatros()
+    setTeatro(dataBack)
     return dataBack
   }
+
+  const traerDataFuncion = async () =>{
+    const funciones = await traerFunciones()
+    for (const element of funciones) {
+      const fechas = element.programacion.date;
+      setfuncion(fechas)
+      return fechas
+    }
+  }
+
 
   const teatroClick = (event) => {
     const {value} = event.target
     setvalue(value)
+    localStorage.setItem("teatroClick", value)
+  }
+  
+  const fechaClick = (event) => {
+    const {value} = event.target
+    setValueFecha(value)
+    localStorage.setItem("fechaClick", value)
   }
 
-  const dataUbicacion = Back.find(item => item.nombre === value)  
+  const dataUbicacion = teatro.find((item) => item.name === value)  
 
   return (
     
@@ -44,8 +64,8 @@ const Header = () => {
         <select onChange={teatroClick} value={value} name='Seleccione la sala de cine' id='ubiacion' className='select'>
         <option className='valores'>Seleccione el teatro</option>
         {
-          Back.map((teatro, index) => (
-            <option  key={index} className='valores'>{teatro.nombre}</option>
+          teatro.map((teatro, index) => (
+            <option  key={index} className='valores'>{teatro.name}</option>
           ))
         }
           
@@ -54,16 +74,19 @@ const Header = () => {
 
       <div className='header__form__select'>
         <label htmlFor="fecha" className='label'>Fecha</label>
-        <select id='fecha'className='select' >
-        <option className='valores'>Seleccione la fech</option>
+        <select onChange={fechaClick} value={valueFecha} id='fecha'className='select' >
+        <option className='valores'>Seleccione la fecha</option>
         {
           dataUbicacion? (
-            Back.map((fecha, index))
+            funcion.map((fecha, index) => (
+              <option  key={index} className='valores'>{fecha.dia}
+              {console.log(fecha.dia)}
+              </option>
+              
+            ))  
           ):(
             console.log("no da")
           )
-          
-          
         }
         
         </select>

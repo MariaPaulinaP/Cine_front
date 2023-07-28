@@ -3,6 +3,7 @@ import { useLocation, useParams } from "react-router-dom";
 import "./detallePelicula.scss";
 import infoVideos from "../../service/traerVideos/TraerVideos";
 import ReactPlayer from "react-player";
+import { traerFunciones } from "../../service/traerBack/traerBack";
 
 function DetallePelicula() {
   const [info, setInfo] = useState({});
@@ -59,6 +60,26 @@ function DetallePelicula() {
     setposicion(numero);
   };
 
+  const fecha = localStorage.getItem("fechaClick")
+  const ubicacion = localStorage.getItem("teatroClick")
+
+  const [funcion, setfuncion] = useState([])
+
+  useEffect(()=>{
+    traerDataFuncion()
+  }, [])
+
+  const traerDataFuncion = async () =>{
+    const funciones = await traerFunciones()
+    
+    for (const element of funciones) {
+      const hora = element.programacion.horaPrimeraFuncion;
+      setfuncion(hora)
+      return hora
+    }
+  }
+
+
   return (
     <section>
       <>
@@ -81,11 +102,17 @@ function DetallePelicula() {
 
           <div className="detalles__funcion">
             <h4 className="detalles__funcion__titulo">
-              Horarios disponibles - 07 de julio
+              Horarios disponibles - {`${fecha}`}
             </h4>
             <span>Elije el horario que prefieras</span>
-            <span className="centro__comercial">Centro comercial</span>
-            <button className="btn-horas">Hora</button>
+            <span className="centro__comercial">{`${ubicacion}`}</span>
+            
+         
+              <button className="btn-horas"></button>
+               
+            
+           
+
             <button className="boleto">Seleccionar boletos</button>
           </div>
         </div>
