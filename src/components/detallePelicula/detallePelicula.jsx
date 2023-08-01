@@ -82,11 +82,29 @@ function DetallePelicula() {
   const clickHora = ({target}) => {
     const {value} = target;
     localStorage.setItem("hora", value)
-  }
-  const clickSeleccionarBoleto = () => {
 
+    const stateButton = document.querySelectorAll(".btn-horas")
+    stateButton.forEach((item)=>{
+      item.classList.add("noActiveButton")
+    })
+    target.classList.remove("noActiveButton")
+    target.classList.add("activeButton")
+
+  }
+
+ 
+  const clickSeleccionarBoleto = () => {
     navigate("/seleccionBoleto");
   }
+
+  // const getStyle = (target) => {
+  //   const stateButton = document.querySelectorAll(".btn-horas")
+  //   stateButton.forEach((item)=>{
+  //     item.classList.add("noActiveButton")
+  //   })
+  //   target.classList.remove("noActiveButton")
+  //   target.classList.add("activeButton")
+  // }
  
   return (
     <section>
@@ -119,7 +137,8 @@ function DetallePelicula() {
             <div className="div__horas">
               {
                 horas.map((hora, index)=>(
-                <button onClick={clickHora} value={`${hora}:00`} key={index} className="btn-horas">{`${hora}:00`}</button>
+                <button onClick={(e) => { clickHora(e); getStyle(e.target)} } 
+                  value={`${hora}:00`} key={index} className="btn-horas noActiveButton">{`${hora}:00`}</button>
                 )) 
               }
             </div>

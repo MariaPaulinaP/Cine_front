@@ -1,4 +1,5 @@
 import React from 'react'
+import './contadorBoletos.scss'
 
 
 const ContadorBoletos= ( {handleMinus, handlePLus, value} ) => {

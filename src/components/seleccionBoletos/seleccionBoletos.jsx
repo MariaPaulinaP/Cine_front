@@ -14,6 +14,7 @@ function SeleccionBoletos() {
   const fecha = localStorage.getItem("fechaClick")
   const hora = localStorage.getItem("hora")
 
+  const [total, setTotal] = useState(0)
   const [value1, setValue1] = useState(0);
   const [value2, setValue2] = useState(0);
   const [value3, setValue3] = useState(0);
@@ -31,7 +32,7 @@ function SeleccionBoletos() {
     setValue2(value2 + 1)
   }
   const decrementar2 = () =>{
-    if(value1 > 0){
+    if(value2 > 0){
       setValue2(value2 - 1)
     }
   }
@@ -40,13 +41,29 @@ function SeleccionBoletos() {
   }
   const decrementar3 = () =>{
     if(value3 > 0){
-      setValue1(value3 - 1)
+      setValue3(value3 - 1)
     }
   }
+
+  const valorAdulto = value1 * 71; 
+  const valorNiño = value2 * 56; 
+  const valorEdad = value3 * 56;
+
+  console.log(valorAdulto);
+  console.log(valorNiño);
+  console.log(valorEdad);
+  
+  const totalFinal = (valorAdulto + valorNiño + valorEdad); 
+
+  useEffect(() => {
+   setTotal(totalFinal)
+   console.log("el valor de totalfinal ", totalFinal);
+
+  }, [totalFinal])
+
+  localStorage.setItem("totalPagar",totalFinal)
+  
  
-console.log(value1);
-console.log(value2);
-console.log(value3);
   return (
 
     
@@ -115,8 +132,8 @@ console.log(value3);
         <span className="compra__span">Se realiza un cargo por servicio por cada boleto dentro de la orden</span>
         <div className="compra__divTotal">
             <span className="compra__total">Total(IVA incluido)</span>
-            <span className="compra__valor">{`$ ${"hola"}}`}</span>
-            <h1>hola</h1>
+            <span className="compra__valor">{`$ ${total}`}</span>
+      
         </div>
         <button className="compra__boton">Continuar</button>
         
