@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import "./detallePelicula.scss";
 import infoVideos from "../../service/traerVideos/TraerVideos";
 import ReactPlayer from "react-player";
 import { traerFunciones } from "../../service/traerBack/traerBack";
+import SeleccionBoletos from "../seleccionBoletos/seleccionBoletos";
 
 function DetallePelicula() {
   const [info, setInfo] = useState({});
@@ -19,16 +20,6 @@ function DetallePelicula() {
     }
   }, []);
 
-  // const traerData = async () => {
-  //   const id = getMovieFromLocalStorage().id;
-  //   const dataVideo = await traerTrailer(id);
-  //   setVideo(dataVideo);
-  //   console.log(video);
-  // };
-
-  // useEffect(() => {
-  //   traerData();
-  // }, []);
 
   //Video
   const [media, setmedia] = useState([]);
@@ -64,11 +55,11 @@ function DetallePelicula() {
   const ubicacion = localStorage.getItem("teatroClick")
 
   const [funcion, setfuncion] = useState([])
-
   useEffect(()=>{
     traerDataFuncion()
   }, [])
-
+  
+  
   const traerDataFuncion = async () =>{
     const funciones = await traerFunciones()
     
@@ -78,8 +69,25 @@ function DetallePelicula() {
       return hora
     }
   }
+  
+  const horas = [];
+  for (let i = funcion; i <= 21; i += 2) {
+    horas.push(i)
+  }
 
 
+  
+  const navigate = useNavigate()
+
+  const clickHora = ({target}) => {
+    const {value} = target;
+    localStorage.setItem("hora", value)
+  }
+  const clickSeleccionarBoleto = () => {
+
+    navigate("/seleccionBoleto");
+  }
+ 
   return (
     <section>
       <>
@@ -106,14 +114,20 @@ function DetallePelicula() {
             </h4>
             <span>Elije el horario que prefieras</span>
             <span className="centro__comercial">{`${ubicacion}`}</span>
-            
          
-              <button className="btn-horas"></button>
-               
             
-           
-
-            <button className="boleto">Seleccionar boletos</button>
+            <div className="div__horas">
+              {
+                horas.map((hora, index)=>(
+                <button onClick={clickHora} value={`${hora}:00`} key={index} className="btn-horas">{`${hora}:00`}</button>
+                )) 
+              }
+            </div>
+            
+ 
+            <button onClick={() => {
+              clickSeleccionarBoleto()
+            }} className="boleto">Seleccionar boletos</button>
           </div>
         </div>
 

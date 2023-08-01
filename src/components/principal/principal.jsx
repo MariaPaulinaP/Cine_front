@@ -8,7 +8,6 @@ function Principal() {
   return (
     <>
     <Router />
-    <SeleccionBoletos/>
     </>
   )
 }

@@ -1,19 +1,8 @@
-import React, { useState } from 'react'
-import './ContadorBoletos.scss'
+import React from 'react'
 
-const ContadorBoletos= () => {
-  const [value, setValue] = useState(0);
 
-  const handlePLus = () =>{
-    setValue(value + 1)
-  }
-
-  const handleMinus = () =>{
-    if(value > 0){
-      setValue(value - 1)
-    }
-  }
-  
+const ContadorBoletos= ( {handleMinus, handlePLus, value} ) => {
+ 
   return (
     <div className='contador'>
     <button className='contador__menos' onClick={handleMinus}>-</button>

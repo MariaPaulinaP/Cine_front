@@ -4,6 +4,7 @@ import Principal from './components/principal/principal'
 
 
 
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <>
   <Principal />
