@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import ContadorBoletos from "../contadorBoletos/contadorBoletos";
 import './SeleccionBoletos.scss'
+import { useNavigate } from "react-router-dom";
 
 
 
 function SeleccionBoletos() {
 
   const URL_IMAGE = "https://image.tmdb.org/t/p/original";
-  
+
   const {title} = JSON.parse(localStorage.getItem("peliculaClick"))
   const {poster_path} = JSON.parse(localStorage.getItem("peliculaClick"))
   const ubicacion = localStorage.getItem("teatroClick")
@@ -18,6 +19,12 @@ function SeleccionBoletos() {
   const [value1, setValue1] = useState(0);
   const [value2, setValue2] = useState(0);
   const [value3, setValue3] = useState(0);
+
+  const navigate = useNavigate()
+
+  const clickTotalPagar = () => {
+    navigate("/seleccionAsiento");
+  }
 
 
   const incrementar1 = () =>{
@@ -135,7 +142,7 @@ function SeleccionBoletos() {
             <span className="compra__valor">{`$ ${total}`}</span>
       
         </div>
-        <button className="compra__boton">Continuar</button>
+        <button onClick={clickTotalPagar} className="compra__boton">Continuar</button>
         
       </div>
 

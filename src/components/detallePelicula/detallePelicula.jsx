@@ -54,6 +54,12 @@ function DetallePelicula() {
   const fecha = localStorage.getItem("fechaClick")
   const ubicacion = localStorage.getItem("teatroClick")
 
+  const navigate = useNavigate()
+
+  const clickSeleccionarBoleto = () => {
+    navigate("/seleccionBoleto");
+  }
+
   const [funcion, setfuncion] = useState([])
   useEffect(()=>{
     traerDataFuncion()
@@ -75,10 +81,6 @@ function DetallePelicula() {
     horas.push(i)
   }
 
-
-  
-  const navigate = useNavigate()
-
   const clickHora = ({target}) => {
     const {value} = target;
     localStorage.setItem("hora", value)
@@ -91,21 +93,8 @@ function DetallePelicula() {
     target.classList.add("activeButton")
 
   }
-
  
-  const clickSeleccionarBoleto = () => {
-    navigate("/seleccionBoleto");
-  }
 
-  // const getStyle = (target) => {
-  //   const stateButton = document.querySelectorAll(".btn-horas")
-  //   stateButton.forEach((item)=>{
-  //     item.classList.add("noActiveButton")
-  //   })
-  //   target.classList.remove("noActiveButton")
-  //   target.classList.add("activeButton")
-  // }
- 
   return (
     <section>
       <>
