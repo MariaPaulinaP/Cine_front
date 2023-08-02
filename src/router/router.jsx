@@ -16,6 +16,7 @@ function Router() {
               <Route path=":seleccionBoleto" element={<SeleccionBoletos />}/>
               <Route path="/seleccionBoleto" element={<SeleccionBoletos />} />
               <Route path="/seleccionAsiento" element={<SeleccionAsientos/>} />
+              <Route path="/compraBoletos" element={<SeleccionAsientos/>} />
             </Route>
         </Routes>
     </BrowserRouter>

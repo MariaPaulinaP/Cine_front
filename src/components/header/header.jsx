@@ -33,13 +33,13 @@ const Header = () => {
   const teatroClick = (event) => {
     const {value} = event.target
     setvalue(value)
-    localStorage.setItem("teatroClick", value)
+    localStorage.setItem("teatro", value)
   }
   
   const fechaClick = (event) => {
     const {value} = event.target
     setValueFecha(value)
-    localStorage.setItem("fechaClick", value)
+    localStorage.setItem("fecha", value)
   }
 
   const dataUbicacion = teatro.find((item) => item.name === value)  
@@ -85,7 +85,7 @@ const Header = () => {
               
             ))  
           ):(
-            console.log("no da")
+            console.log("Seleccione ubicación y fecha")
           )
         }
         

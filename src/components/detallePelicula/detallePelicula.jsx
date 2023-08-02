@@ -35,6 +35,7 @@ function DetallePelicula() {
 
  
   const idPelicula = JSON.parse(localStorage.getItem("peliculaClick")).id
+  localStorage.setItem("idPelicula", idPelicula)
   const nombre = "Trailer";
   const idNumero = posicion.findIndex((element) => element.type == nombre);
  
@@ -51,8 +52,8 @@ function DetallePelicula() {
     setposicion(numero);
   };
 
-  const fecha = localStorage.getItem("fechaClick")
-  const ubicacion = localStorage.getItem("teatroClick")
+  const fecha = localStorage.getItem("fecha")
+  const ubicacion = localStorage.getItem("teatro")
 
   const navigate = useNavigate()
 

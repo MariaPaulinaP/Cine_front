@@ -11,8 +11,8 @@ function SeleccionBoletos() {
 
   const {title} = JSON.parse(localStorage.getItem("peliculaClick"))
   const {poster_path} = JSON.parse(localStorage.getItem("peliculaClick"))
-  const ubicacion = localStorage.getItem("teatroClick")
-  const fecha = localStorage.getItem("fechaClick")
+  const ubicacion = localStorage.getItem("teatro")
+  const fecha = localStorage.getItem("fecha")
   const hora = localStorage.getItem("hora")
 
   const [total, setTotal] = useState(0)
