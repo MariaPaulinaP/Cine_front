@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './header.scss'
 import { traerFunciones, traerTeatros } from '../../service/traerBack/traerBack.js'
+import { useNavigate } from 'react-router-dom'
 
 const Header = () => {
  
@@ -43,6 +44,11 @@ const Header = () => {
   }
 
   const dataUbicacion = teatro.find((item) => item.name === value)  
+
+  const navigate = useNavigate()
+  const handleAdmi = () => {
+    navigate("/loginAdministrador")
+  }
 
   return (
     
@@ -93,7 +99,7 @@ const Header = () => {
       </div>
     </formulario>
 
-    <button className='header__icono'><span class="material-symbols-outlined">
+    <button className='header__icono'><span class="material-symbols-outlined" onClick={handleAdmi}>
       person
       </span></button>
 
