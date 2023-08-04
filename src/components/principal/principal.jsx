@@ -7,7 +7,6 @@ import Router from '../../router/router'
 function Principal() {
   return (
     <>
-   
     <Router />
     </>
   )

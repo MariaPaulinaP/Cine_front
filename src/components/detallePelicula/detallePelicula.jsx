@@ -5,6 +5,8 @@ import infoVideos from "../../service/traerVideos/TraerVideos";
 import ReactPlayer from "react-player";
 import { traerFunciones } from "../../service/traerBack/traerBack";
 import SeleccionBoletos from "../seleccionBoletos/seleccionBoletos";
+import { traerFuncion, traerSala } from "../../service/traerFuncionSala/traerFuncionSala";
+
 
 function DetallePelicula() {
   const [info, setInfo] = useState({});
@@ -36,6 +38,31 @@ function DetallePelicula() {
  
   const idPelicula = JSON.parse(localStorage.getItem("peliculaClick")).id
   localStorage.setItem("idPelicula", idPelicula)
+
+
+  const idFuncion = async (idPelicula) =>{
+    const codigoFuncion = await traerFuncion(idPelicula)
+    const funcionId = codigoFuncion[0].id
+    return funcionId
+  }
+  
+ idFuncion(idPelicula).then((respuesta)=>{
+
+  const idFuncion = respuesta; 
+  const teatro = localStorage.getItem("teatro");
+  console.log(idFuncion)
+  console.log(teatro)
+
+  traerSala(idFuncion, teatro)
+
+ })
+.catch((error)=>{
+  console.log(error)
+})
+
+
+
+
   const nombre = "Trailer";
   const idNumero = posicion.findIndex((element) => element.type == nombre);
  
@@ -127,7 +154,10 @@ function DetallePelicula() {
             <div className="div__horas">
               {
                 horas.map((hora, index)=>(
-                <button onClick={(e) => { clickHora(e); getStyle(e.target)} } 
+                <button onClick={(e) => { clickHora(e); 
+                  // getStyle(e.target)
+                } 
+                } 
                   value={`${hora}:00`} key={index} className="btn-horas noActiveButton">{`${hora}:00`}</button>
                 )) 
               }

@@ -2,7 +2,7 @@ export const traerTiquetesComprados = [
     {
       id: 1,
       codeSeat: "A7",
-      idCinema: 2,
+      idCinema: "Arkadia",
       idSala: 2,
       idFuncion: 2,
       date: "8 de agosto",
@@ -11,7 +11,7 @@ export const traerTiquetesComprados = [
     {
       id: 2,
       codeSeat: "A8",
-      idCinema: 2,
+      idCinema: "Arkadia",
       idSala: 2,
       idFuncion: 2,
       date: "8 de agosto",
@@ -20,7 +20,7 @@ export const traerTiquetesComprados = [
     {
       id: 3,
       codeSeat: "A9",
-      idCinema: 2,
+      idCinema: "Arkadia",
       idSala: 2,
       idFuncion: 2,
       date: "8 de agosto",
@@ -29,7 +29,7 @@ export const traerTiquetesComprados = [
     {
       id: 4,
       codeSeat: "B7",
-      idCinema: 2,
+      idCinema: "Oviedo",
       idSala: 2,
       idFuncion: 2,
       date: "8 de agosto",
@@ -38,7 +38,7 @@ export const traerTiquetesComprados = [
     {
       id: 5,
       codeSeat: "B8",
-      idCinema: 2,
+      idCinema: "Oviedo",
       idSala: 2,
       idFuncion: 2,
       date: "8 de agosto",

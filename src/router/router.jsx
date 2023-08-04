@@ -5,6 +5,7 @@ import DetallePelicula from '../components/detallePelicula/detallePelicula'
 import Card from '../components/card/card'
 import SeleccionBoletos from '../components/seleccionBoletos/seleccionBoletos'
 import SeleccionAsientos from '../components/seleccionAsientos/seleccionAsientos'
+import PagoBoletos from '../components/pagoBoletos/pagoBoletos'
 
 function Router() {
   return (
@@ -16,7 +17,7 @@ function Router() {
               <Route path=":seleccionBoleto" element={<SeleccionBoletos />}/>
               <Route path="/seleccionBoleto" element={<SeleccionBoletos />} />
               <Route path="/seleccionAsiento" element={<SeleccionAsientos/>} />
-              <Route path="/compraBoletos" element={<SeleccionAsientos/>} />
+              <Route path="/compraBoletos" element={<PagoBoletos/>} />
             </Route>
         </Routes>
     </BrowserRouter>
