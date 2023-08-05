@@ -13,6 +13,7 @@ import { getSession } from "../service/sessionService/sessionService";
 import { initialUser, userReducer } from "../service/admiReducer/admiReducer";
 import Layout from "../components/layout/Layout";
 import { createContext } from "react";
+import HomeAdmin from "../componentsAdmi/homeAdmin/HomeAdmin";
 
 
 export const AppContext = createContext({});
@@ -57,7 +58,7 @@ function Router() {
 
           <Route element={<PrivateRoutes isAutenticated={userLogin.isAutenticated} />}>
             <Route element={<Layout/>}>
-              <Route path="/administrador" element={<Administrador />} />
+              <Route path="/administrador" element={<HomeAdmin />} />
             </Route>
           </Route>
 
