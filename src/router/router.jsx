@@ -8,12 +8,13 @@ import SeleccionAsientos from "../components/seleccionAsientos/seleccionAsientos
 import PagoBoletos from "../components/pagoBoletos/pagoBoletos";
 import LoginAdmi from "../components/loginAdmi/loginAdmi";
 import PrivateRoutes from "./privateRoutes";
-import Administrador from "../components/administrador/administrador";
 import { getSession } from "../service/sessionService/sessionService";
 import { initialUser, userReducer } from "../service/admiReducer/admiReducer";
 import Layout from "../components/layout/Layout";
 import { createContext } from "react";
 import HomeAdmin from "../componentsAdmi/homeAdmin/HomeAdmin";
+import CompraExitosa from "../components/compraExitosa/compraExitosa";
+import DescargaBoletos from "../components/descargaBoletos/descargaBoletos";
 
 
 export const AppContext = createContext({});
@@ -53,6 +54,8 @@ function Router() {
             <Route path="/seleccionBoleto" element={<SeleccionBoletos />} />
             <Route path="/seleccionAsiento" element={<SeleccionAsientos />} />
             <Route path="/compraBoletos" element={<PagoBoletos />} />
+            <Route path="/compraExitosa" element={<CompraExitosa />} />
+            <Route path="/descargaBoletos" element={<DescargaBoletos />} />
             <Route path="/loginAdministrador" element={<LoginAdmi />} />
           </Route>
 

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './header.scss'
 import { traerFunciones, traerTeatros } from '../../service/traerBack/traerBack.js'
 import { useNavigate } from 'react-router-dom'
+import LoginAdmi from '../loginAdmi/loginAdmi'
 
 const Header = () => {
  
@@ -9,6 +10,16 @@ const Header = () => {
   const [funcion, setfuncion] = useState([])
   const [value, setvalue] = useState({})
   const [valueFecha, setValueFecha] = useState({})
+  const [modal, setModal] = useState(false)
+
+  const openModal = () => {
+    setModal(true)
+  }
+
+  const closeModal = () => {
+    setModal(false)
+  }
+
 
   useEffect(()=>{
     traerDataTeatro()
@@ -49,6 +60,7 @@ const Header = () => {
   const handleAdmi = () => {
     navigate("/loginAdministrador")
   }
+
 
   return (
     
@@ -99,9 +111,13 @@ const Header = () => {
       </div>
     </formulario>
 
-    <button className='header__icono'><span class="material-symbols-outlined" onClick={handleAdmi}>
+    <div>
+    <button className='header__icono'><span class="material-symbols-outlined" onClick={openModal} >
       person
       </span></button>
+      <LoginAdmi isOpen={modal} onRequestCloset={closeModal}/>
+
+    </div>
 
     </header>
     
