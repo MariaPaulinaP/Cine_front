@@ -5,7 +5,7 @@
     --color_azul:#2666ae;
 }
 
-.header{
+.header1{
 
     height: 7rem;
     background-color: rgb(0, 0, 0);
@@ -53,7 +53,7 @@
         
     }
 
-    .div__perfil{
+    .div__perfil1{
         display: flex;
         align-items: center;
         gap: 15px;
@@ -63,15 +63,15 @@
             height: 42px;
             margin-top: 16px;
         }
-        .div__perfil-dos{
+        .div__perfil-dos1{
             display: flex;
             flex-direction: column;
            
-            .perfil__titulo{
+            .perfil__titulo1{
                 color: white;
                 font-size: 19px;
             }
-            .perfil__nombre{
+            .perfil__nombre1{
                 color: white;
                 opacity: 50%;
             }
@@ -82,7 +82,7 @@
         cursor: pointer;
     }
 
-    .valores{
+    .valores1{
         color: white;
     }
 
@@ -100,7 +100,7 @@
     
 }
 
-.cartelera{
+.cartelera1{
     margin-left: 30px;
     font-family:Arial, Helvetica, sans-serif;
 }
@@ -108,13 +108,13 @@
     color: white;
 }
 
-.label{
+.label1{
     font-weight: bolder;
     margin-bottom: 0.5rem;
     font-size: 12px;
 }
 
-.select{
+.select1{
     border: 1px solid #e7e7e7;;
     height: 3rem;
     padding: 0.3rem;
@@ -124,12 +124,12 @@
     font-size: 12px;
 }
 
-.container__main{
+.container__main1{
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    .container__div{
+    .container__div1{
         width: 19%;
         padding: 20px 20px 60px 20px;
         border-radius: 10px;
@@ -145,12 +145,12 @@
         h3{
             margin: 0;
         }
-        .imagen__pelicula{
+        .imagen__pelicula1{
             width: 16rem;
             border-radius: 10px;
         }
     }
-    .container__div:hover{
+    .container__div1:hover{
         box-shadow: 3px 1px 18px 2px;
         cursor: pointer;
         .imagen__pelicula{

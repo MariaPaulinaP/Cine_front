@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer } from "react";
+import React, { useEffect, useReducer, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "../components/home/home";
 import DetallePelicula from "../components/detallePelicula/detallePelicula";
@@ -14,12 +14,14 @@ import { initialUser, userReducer } from "../service/admiReducer/admiReducer";
 import Layout from "../components/layout/Layout";
 import { createContext } from "react";
 import HomeAdmin from "../componentsAdmi/homeAdmin/HomeAdmin";
+import DetallesPeliculaAdmin from "../componentsAdmi/detallesPeliculaAdmin/DetallesPeliculaAdmin";
 
 
 export const AppContext = createContext({});
 
 function Router() {
   
+  const [nameUser, setNameUser] = useState([])
   useEffect(() => {
     const user = getSession();
     if (user?.name) {
@@ -43,7 +45,7 @@ function Router() {
 
   return (
    
-    <AppContext.Provider value={globalState}>
+    <AppContext.Provider value={globalState} >
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />}>
@@ -59,6 +61,7 @@ function Router() {
           <Route element={<PrivateRoutes isAutenticated={userLogin.isAutenticated} />}>
             <Route element={<Layout/>}>
               <Route path="/administrador" element={<HomeAdmin />} />
+              <Route path="/administrador/:pelicula" element={<DetallesPeliculaAdmin />} /> 
             </Route>
           </Route>
 

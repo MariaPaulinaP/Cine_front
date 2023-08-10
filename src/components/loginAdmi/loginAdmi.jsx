@@ -6,6 +6,7 @@ import { saveSession } from '../../service/sessionService/sessionService'
 import { useContext } from 'react'
 import { AppContext } from '../../router/router'
 
+
 function LoginAdmi() {
 
 const [admim, setAdmim] = useState(false)
@@ -14,7 +15,8 @@ const {register, handleSubmit, formState:{ errors } } = useForm()
 
 const navigate = useNavigate()
 
-const {user: {userDispatch}} = useContext(AppContext)
+
+const {user: {userDispatch}} = useContext(AppContext);
 
 const onSubmit = (data) => {
 
@@ -31,6 +33,9 @@ const onSubmit = (data) => {
         saveSession(validarUsuario)
         setAdmim(true)
         navigate('/administrador')
+     
+        
+
 
        }
     else{

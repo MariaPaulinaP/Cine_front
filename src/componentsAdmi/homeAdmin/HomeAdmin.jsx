@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
-// import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router';
 import { traerPeliculas } from '../../service/traerPeliculas/traerPeliculas';
 import './HomeAdmin.scss'
 import logoCineco from '../../assets/logo_cineco.svg'
+import { addMovieLocalStorage } from '../../utils/localStorage';
 
 const HomeAdmin = () => {
     const URL_IMAGE = 'https://image.tmdb.org/t/p/original';
@@ -17,12 +18,20 @@ const HomeAdmin = () => {
         setData(data);
     }
 
-    // const navigate = useNavigate()
+    const navigate = useNavigate()
+
+    const clickPelicula = (pelicula) => {
+        addMovieLocalStorage(pelicula)
+        navigate(":pelicula")      
+        
+    }
+
+
   return (
     <>
-         <header className='header'>
-            <figure className='header__figure'>
-            <img className='header__img' src={logoCineco} alt="logo" />
+         <header className='header1'>
+            <figure className='header__figure1'>
+            <img className='header__img1' src={logoCineco} alt="logo" />
             </figure>
 
             <nav className='header__nav'>
@@ -32,11 +41,11 @@ const HomeAdmin = () => {
             <button className='header__nav__button'>Comedia</button>
             </nav>
 
-            <div className='div__perfil'>
+            <div className='div__perfil1'>
                 <img src="https://i0.wp.com/sonria.com/wp-content/uploads/2016/08/2165947w620.jpg?fit=620%2C348&ssl=1" alt="administrador" />
-                <div className='div__perfil-dos'>
-                    <h2 className='perfil__titulo'>Profile name</h2>
-                    <span className='perfil__nombre'>View profile</span>
+                <div className='div__perfil-dos1'>
+                    <h2 className='perfil__titulo1'>Profile name</h2>
+                    <span className='perfil__nombre1'>View profile</span>
                 </div>
                 
             </div>
@@ -49,13 +58,13 @@ const HomeAdmin = () => {
 
         </header> 
 
-        {  <h1 className='cartelera'>En cartelera</h1> }
+        {  <h1 className='cartelera1'>En cartelera</h1> }
 
-            { <section className='container__main'>
+            { <section className='container__main1'>
                 {
                     data.map((pelicula, index) => (
-                        <div key={index} className='container__div' onClick={() => {clickPelicula(pelicula) }}>
-                            <img src={URL_IMAGE + pelicula.poster_path} alt="" className='imagen__pelicula'/>
+                        <div key={index} className='container__div1' onClick={() => {clickPelicula(pelicula) }}>
+                            <img src={URL_IMAGE + pelicula.poster_path} alt="" className='imagen__pelicula1'/>
                             <br/>
                             <h3>{pelicula.title}</h3>
                             <br/>
