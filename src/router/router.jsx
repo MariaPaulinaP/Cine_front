@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer } from "react";
+import React, { useEffect, useReducer, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "../components/home/home";
 import DetallePelicula from "../components/detallePelicula/detallePelicula";
@@ -15,6 +15,7 @@ import { createContext } from "react";
 import HomeAdmin from "../componentsAdmi/homeAdmin/HomeAdmin";
 import CompraExitosa from "../components/compraExitosa/compraExitosa";
 import DescargaBoletos from "../components/descargaBoletos/descargaBoletos";
+
 
 
 export const AppContext = createContext({});
@@ -42,13 +43,16 @@ function Router() {
     },
   };
 
+  
+
   return (
    
     <AppContext.Provider value={globalState}>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />}>
-            <Route path="/" element={<Card />} />
+          <Route path="/" element={<Card />} />
+            <Route path="/:dataId" element={<Card />} />
             <Route path=":pelicula" element={<DetallePelicula />} />
             <Route path=":seleccionBoleto" element={<SeleccionBoletos />} />
             <Route path="/seleccionBoleto" element={<SeleccionBoletos />} />
@@ -56,8 +60,10 @@ function Router() {
             <Route path="/compraBoletos" element={<PagoBoletos />} />
             <Route path="/compraExitosa" element={<CompraExitosa />} />
             <Route path="/descargaBoletos" element={<DescargaBoletos />} />
-            <Route path="/loginAdministrador" element={<LoginAdmi />} />
+      
           </Route>
+          <Route path="/loginAdministrador" element={<LoginAdmi />} />
+          
 
           <Route element={<PrivateRoutes isAutenticated={userLogin.isAutenticated} />}>
             <Route element={<Layout/>}>
