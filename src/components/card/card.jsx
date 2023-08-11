@@ -20,9 +20,8 @@ const Card = () => {
     const arrayGender = []; 
     const data = await traerPeliculas();
     
-    console.log(typeof(gender))
-    
-
+    // console.log(typeof(gender))
+  
     if (gender === undefined) {
         setData(data);
 
@@ -35,7 +34,7 @@ const Card = () => {
                 arrayGender.push(item)
             }
         })
-        console.log(arrayGender)
+        // console.log(arrayGender)
         setData(arrayGender);
 
     }
@@ -50,7 +49,7 @@ const Card = () => {
 
   const clickPelicula = (pelicula) => {
     addMovieLocalStorage(pelicula);
-    navigate(`${pelicula.title}`, { state: pelicula });
+    navigate(`pelicula/${pelicula.title}`, { state: pelicula })
   };
 
   const genders = {
@@ -85,10 +84,6 @@ const Card = () => {
  }
 
 
-
-
-
-
   return (
     <>
       <h1>En cartelera</h1>
@@ -117,6 +112,7 @@ const Card = () => {
                getGender(pelicula.genre_ids)
             }
             </p>
+            <span className="container__publico">Para todo publico</span>
             
     
           </div>

@@ -71,7 +71,11 @@ const Header = () => {
   return (
     <header className="header">
       <figure className="header__figure">
-        <span class="material-symbols-outlined menu">menu</span>
+        <div className="menu__div">
+        <span className="material-symbols-outlined menu">menu</span>
+
+        </div>
+        
         <img
           className="header__img"
           src="https://seeklogo.com/images/C/cine-colombia-logo-1C443A07F5-seeklogo.com.png"

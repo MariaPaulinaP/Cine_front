@@ -1,6 +1,6 @@
 import React from "react";
 import './descargaBoletos.scss'
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function DescargaBoletos() {
   const URL_IMAGE = "https://image.tmdb.org/t/p/original";
@@ -19,14 +19,15 @@ function DescargaBoletos() {
   const clickHome = () => {
     localStorage.clear();
     navigate("/");
+
   };
 
   return (
-    <>
-    
-    <button className="btn__backHome" onClick={clickHome}> ← Home</button>
+     <>
     <section className="page__boletos">
+  
       <div className="boletos">
+       <button className="btn__backHome" onClick={clickHome}> ← Home</button>
 
       <div className="boletos__inicio">
         <h2 className="boletos__titulo">Boletos</h2>

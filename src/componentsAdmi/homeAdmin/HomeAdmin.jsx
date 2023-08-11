@@ -34,7 +34,7 @@ const HomeAdmin = () => {
             <img className='header__img1' src={logoCineco} alt="logo" />
             </figure>
 
-            <nav className='header__nav'>
+            <nav className='header__nav1'>
             <button className='header__nav__button1'>Acción</button>
             <button className='header__nav__button1'>Terror</button>
             <button className='header__nav__button1'>Ciencia ficción</button>
@@ -44,7 +44,7 @@ const HomeAdmin = () => {
             <div className='div__perfil1'>
                 <img src="https://i0.wp.com/sonria.com/wp-content/uploads/2016/08/2165947w620.jpg?fit=620%2C348&ssl=1" alt="administrador" />
                 <div className='div__perfil-dos1'>
-                    <h2 className='perfil__titulo1'>Profile name</h2>
+                    <h2 className='perfil__titulo1'>nombre</h2>
                     <span className='perfil__nombre1'>View profile</span>
                 </div>
                 

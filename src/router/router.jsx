@@ -17,13 +17,10 @@ import DetallesPeliculaAdmin from "../componentsAdmi/detallesPeliculaAdmin/Detal
 import CompraExitosa from "../components/compraExitosa/compraExitosa";
 import DescargaBoletos from "../components/descargaBoletos/descargaBoletos";
 
-
-
 export const AppContext = createContext({});
 
 function Router() {
-  
-  const [nameUser, setNameUser] = useState([])
+  const [nameUser, setNameUser] = useState([]);
   useEffect(() => {
     const user = getSession();
     if (user?.name) {
@@ -45,35 +42,37 @@ function Router() {
     },
   };
 
-  
-
   return (
-   
-    <AppContext.Provider value={globalState} >
+    <AppContext.Provider value={globalState}>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />}>
-          <Route path="/" element={<Card />} />
-            <Route path="/:dataId" element={<Card />} />
-            <Route path=":pelicula" element={<DetallePelicula />} />
+            <Route path="/" element={<Card />} />
+            <Route path=":dataId" element={<Card />} />
+            <Route path=":dataId/pelicula/:pelicula" element={<DetallePelicula />} />
+            <Route path="/pelicula/:pelicula" element={<DetallePelicula />} />
             <Route path=":seleccionBoleto" element={<SeleccionBoletos />} />
             <Route path="/seleccionBoleto" element={<SeleccionBoletos />} />
             <Route path="/seleccionAsiento" element={<SeleccionAsientos />} />
             <Route path="/compraBoletos" element={<PagoBoletos />} />
             <Route path="/compraExitosa" element={<CompraExitosa />} />
             <Route path="/descargaBoletos" element={<DescargaBoletos />} />
-      
           </Route>
           <Route path="/loginAdministrador" element={<LoginAdmi />} />
-          
 
-          <Route element={<PrivateRoutes isAutenticated={userLogin.isAutenticated} />}>
-            <Route element={<Layout/>}>
+          <Route
+            element={
+              <PrivateRoutes isAutenticated={userLogin.isAutenticated} />
+            }
+          >
+            <Route element={<Layout />}>
               <Route path="/administrador" element={<HomeAdmin />} />
-              <Route path="/administrador/:pelicula" element={<DetallesPeliculaAdmin />} /> 
+              <Route
+                path="/administrador/:pelicula"
+                element={<DetallesPeliculaAdmin />}
+              />
             </Route>
           </Route>
-
         </Routes>
       </BrowserRouter>
     </AppContext.Provider>
@@ -81,3 +80,25 @@ function Router() {
 }
 
 export default Router;
+
+// Parece que hay un problema con la configuración de tus rutas en React Router. Si no estás obteniendo el valor de pelicula en la ruta, podría ser debido a un error en la definición de la ruta correspondiente.
+
+// Aquí tienes una posible corrección en tu código para asegurarte de que la ruta /:pelicula capture correctamente el valor de pelicula:
+
+// jsx
+// Copy code
+// <BrowserRouter>
+//   <Routes>
+//     <Route path="/" element={<Home />}>
+//       <Route path="/" element={<Card />} />
+//       <Route path="/:dataId" element={<Card />} />
+//       <Route path="/pelicula/:pelicula" element={<DetallePelicula />} />
+//       <Route path="/seleccionBoleto" element={<SeleccionBoletos />} />
+//       <Route path="/seleccionAsiento" element={<SeleccionAsientos />} />
+//       <Route path="/compraBoletos" element={<PagoBoletos />} />
+//       <Route path="/compraExitosa" element={<CompraExitosa />} />
+//       <Route path="/descargaBoletos" element={<DescargaBoletos />} />
+//     </Route>
+//   </Routes>
+// </BrowserRouter>
+// En esta corrección, he agregado /pelicula/ antes de :pelicula en la ruta para asegurarme de que se capture correctamente el valor de pelicula. Por ejemplo, si tienes una URL como /pelicula/123, 123 será capturado como el valor de pelicula. Asegúrate de que esta configuración coincida con cómo estás pasando y recibiendo los parámetros en tu componente DetallePelicula.

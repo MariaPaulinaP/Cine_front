@@ -14,14 +14,17 @@
     background-color: gray;
     cursor: pointer;
     color: white;
+    position: relative;
+    right: 50rem;
+    bottom: 4rem;
     
 }
 
 .boletos{
     width: 30%;
-    margin: 1rem;
+    margin: 2rem;
     padding: 2rem;
-    padding-top: 5rem;
+    padding-top: 1rem;
     height: auto;
     border-radius: 10px;
     background-color: rgb(17, 17, 73);

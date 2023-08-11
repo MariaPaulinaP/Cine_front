@@ -90,7 +90,14 @@
     font-size: 12px;
 }
 
-.menu{display: none;}
+.menu__div{
+    display: none;
+}
+.menu{
+    display: none;
+}
+
+
 
 @media(max-width: 500px){
     .header{
@@ -173,6 +180,9 @@
         position: relative;
         top: 5rem;
         right: 9rem;
+    }
+    .menu__div{
+        display: block; 
     }
 
     .menu{

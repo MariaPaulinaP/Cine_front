@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const URL_BACK = 'http://localhost:3000'
+const URL_BACK = 'https://cine-miniback.onrender.com'
 
 const endpoits = {
     teatros : `${URL_BACK}/teatros`, 

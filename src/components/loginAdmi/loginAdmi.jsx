@@ -28,8 +28,9 @@ function LoginAdmi({ isOpen, onRequestCloset }) {
   const onSubmit = (data) => {
     const validarUsuario =
       (data.email === "mariapaulinap0531@gmail.com" &&
-        data.password === "maria123") ||
-      (data.email === "sebas123@gmail.com" && data.password === "sebas123");
+        data.password === "maria123" || data.nombre === "Maria paulina") ||
+      (data.email === "sebas123@gmail.com" && data.password === "sebas123") 
+    
 
     if (validarUsuario) {
       userDispatch({
@@ -41,6 +42,7 @@ function LoginAdmi({ isOpen, onRequestCloset }) {
       });
       saveSession(validarUsuario);
       setAdmim(true);
+      localStorage.setItem("userData", JSON.stringify(data));
       navigate("/administrador");
     } else {
       console.log("no eres administrador");
