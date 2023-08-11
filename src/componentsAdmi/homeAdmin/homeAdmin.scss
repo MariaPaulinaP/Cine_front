@@ -14,19 +14,19 @@
     justify-content: space-between;
     padding: 0 2rem;
 
-    &__img{
+    &__img1{
         height: 7rem;
         width: 12rem;
         margin-top: 1rem;
         cursor: pointer;
     }
 
-    &__nav{
+    &__nav1{
         display: flex;
         gap: 1rem;
     }
 
-    &__nav__button{
+    &__nav__button1{
         background-color: var(--color_azul);
         height: 30px;
         width: 7rem;
@@ -36,16 +36,16 @@
         font-weight: bolder;
     
     }
-    &__nav__button:hover{
+    &__nav__button1:hover{
         background-color: #4d97ec;
     }
 
-    &__form{
+    &__form1{
         display: flex;
         color: white;
         gap: 2rem;
 
-        &__select{
+        &__select1{
             color: #ffffff;
             display: flex;
             flex-direction: column;
@@ -162,9 +162,9 @@
 }
 
 @media(max-width: 1100px){
-    .container__main{
-        .container__div{
-            .imagen__pelicula{
+    .container__main1{
+        .container__div1{
+            .imagen__pelicula1{
                 width: 8rem;
             }
         }

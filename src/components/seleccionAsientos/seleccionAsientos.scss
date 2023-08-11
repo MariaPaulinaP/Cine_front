@@ -1,7 +1,7 @@
 .seleccionAsientos{
     display: flex;
     margin-left: 12rem;
-    margin-top: 5rem;
+    margin-top: 2rem;
     margin-bottom: 5rem;
     gap: 12rem; 
 }
@@ -26,10 +26,23 @@
         align-items: center;
         gap: 1rem;
     }
+
+    &__pantalla{
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        background-color: rgb(182, 180, 180);
+        font-size: 20px;
+        padding: 1rem;
+        border-radius: 20px;
+        margin-top: 2rem;
+        align-self: center;
+    }
 }
 
 .compra{
     margin-top: 0;
+    height: max-content;
 
     &__span{
         margin-top: 3rem;  

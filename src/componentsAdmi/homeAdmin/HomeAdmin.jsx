@@ -35,10 +35,10 @@ const HomeAdmin = () => {
             </figure>
 
             <nav className='header__nav'>
-            <button className='header__nav__button'>Acción</button>
-            <button className='header__nav__button'>Terror</button>
-            <button className='header__nav__button'>Ciencia ficción</button>
-            <button className='header__nav__button'>Comedia</button>
+            <button className='header__nav__button1'>Acción</button>
+            <button className='header__nav__button1'>Terror</button>
+            <button className='header__nav__button1'>Ciencia ficción</button>
+            <button className='header__nav__button1'>Comedia</button>
             </nav>
 
             <div className='div__perfil1'>

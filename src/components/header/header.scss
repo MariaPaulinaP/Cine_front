@@ -12,6 +12,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 5rem;
+    z-index: -1;
 
     &__figure{
         height: 10rem;
@@ -87,4 +88,96 @@
     color: #e7e7e7;
     background-color: black;
     font-size: 12px;
+}
+
+.menu{display: none;}
+
+@media(max-width: 500px){
+    .header{
+        height: 5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 1rem;
+        z-index: -1;
+        margin-bottom: 7rem;
+    
+        &__figure{
+            height: 5rem;
+
+        }
+    
+        &__img{
+            height: 4rem;
+            margin-top: 0;
+            position: relative;
+            left: 18rem;
+        }
+    
+        &__nav{
+            display: none;
+        }
+    
+        &__nav__button{
+            display: none;
+        }
+       
+    
+        &__form{
+            display: flex;
+            color: white;
+            gap: 4rem;
+    
+            &__select{
+                color: #ffffff;
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    
+        .valores{
+            color: white;
+        }
+    
+        &__icono{
+            height: 3rem;
+            width: 3rem;
+          
+        }
+        
+    }
+    
+    .material-symbols-outlined {
+        color: white;
+    }
+    
+    .label{
+        margin-bottom: 0.5rem;
+        margin-top: 0.5rem;
+        font-size: 20px;
+        position: relative;
+        top: 5rem;
+        right: 9rem;
+        color: black;
+   
+    }
+    
+    .select{
+        border: 1px solid #e7e7e7;;
+        height: 3rem;
+        padding: 0.3rem;
+        border-radius: 10px;
+        color: #e7e7e7;
+        background-color: black;
+        font-size: 12px;
+        position: relative;
+        top: 5rem;
+        right: 9rem;
+    }
+
+    .menu{
+        font-size: 20px;
+        margin-right: 1rem;
+    }
+
 }

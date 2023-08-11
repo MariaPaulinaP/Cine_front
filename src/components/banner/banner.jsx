@@ -1,6 +1,7 @@
 import React from 'react'
 import Slider from '../slider/slider'
 import './banner.scss'
+import '../loginAdmi/loginAdmi.scss'
 
 function Banner() {
 

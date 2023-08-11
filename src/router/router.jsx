@@ -8,13 +8,15 @@ import SeleccionAsientos from "../components/seleccionAsientos/seleccionAsientos
 import PagoBoletos from "../components/pagoBoletos/pagoBoletos";
 import LoginAdmi from "../components/loginAdmi/loginAdmi";
 import PrivateRoutes from "./privateRoutes";
-import Administrador from "../components/administrador/administrador";
 import { getSession } from "../service/sessionService/sessionService";
 import { initialUser, userReducer } from "../service/admiReducer/admiReducer";
 import Layout from "../components/layout/Layout";
 import { createContext } from "react";
 import HomeAdmin from "../componentsAdmi/homeAdmin/HomeAdmin";
 import DetallesPeliculaAdmin from "../componentsAdmi/detallesPeliculaAdmin/DetallesPeliculaAdmin";
+import CompraExitosa from "../components/compraExitosa/compraExitosa";
+import DescargaBoletos from "../components/descargaBoletos/descargaBoletos";
+
 
 
 export const AppContext = createContext({});
@@ -43,20 +45,27 @@ function Router() {
     },
   };
 
+  
+
   return (
    
     <AppContext.Provider value={globalState} >
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />}>
-            <Route path="/" element={<Card />} />
+          <Route path="/" element={<Card />} />
+            <Route path="/:dataId" element={<Card />} />
             <Route path=":pelicula" element={<DetallePelicula />} />
             <Route path=":seleccionBoleto" element={<SeleccionBoletos />} />
             <Route path="/seleccionBoleto" element={<SeleccionBoletos />} />
             <Route path="/seleccionAsiento" element={<SeleccionAsientos />} />
             <Route path="/compraBoletos" element={<PagoBoletos />} />
-            <Route path="/loginAdministrador" element={<LoginAdmi />} />
+            <Route path="/compraExitosa" element={<CompraExitosa />} />
+            <Route path="/descargaBoletos" element={<DescargaBoletos />} />
+      
           </Route>
+          <Route path="/loginAdministrador" element={<LoginAdmi />} />
+          
 
           <Route element={<PrivateRoutes isAutenticated={userLogin.isAutenticated} />}>
             <Route element={<Layout/>}>
