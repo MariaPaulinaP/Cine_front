@@ -7,9 +7,7 @@ import { totalDatos } from './dataDetalles';
 import infoVideos from '../../service/traerVideos/TraerVideos';
 import { traerFunciones, traerTeatros } from '../../service/traerBack/traerBack';
 import Datapicker from '../datapicker/Datapicker';
-
-
-
+import { Navigate, useNavigate } from 'react-router-dom';
 
 
 
@@ -127,7 +125,11 @@ const DetallesPeliculaAdmin = () => {
       setHoraEditada(""); // Limpiar el estado de la hora editada
     }
   };
+  const navigate = useNavigate();
   
+  const inicio = () => {
+    navigate("/")
+  }
 
   return (
 
@@ -135,14 +137,14 @@ const DetallesPeliculaAdmin = () => {
       <header className='header2'>
 
         <figure className='header__figure2'>
-          <img className='header__img2' src={logoCineco} alt="logo" />
+          <img className='header__img2' src={logoCineco} alt="logo" onClick={inicio}/>
         </figure>
 
         <div className='div__perfil2'>
-          <img src="https://i0.wp.com/sonria.com/wp-content/uploads/2016/08/2165947w620.jpg?fit=620%2C348&ssl=1" alt="administrador" />
+          <img src="https://img.freepik.com/foto-gratis/retrato-joven-mujer-rubia-piel-bronceada-ropa-moda_144627-47360.jpg?w=2000" alt="administrador" />
           <div className='div__perfil-dos2'>
-            <h2 className='perfil__titulo2'></h2>
-            <span className='perfil__nombre2'>View profile</span>
+            <h2 className='perfil__titulo2'>Maria paulina</h2>
+            <span className='perfil__nombre2'>Ver perfil</span>
           </div>
 
         </div>

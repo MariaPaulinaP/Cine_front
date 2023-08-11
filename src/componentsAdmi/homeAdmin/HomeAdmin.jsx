@@ -25,13 +25,16 @@ const HomeAdmin = () => {
         navigate(":pelicula")      
         
     }
-
+  
+    const inicio = () => {
+      navigate("/")
+    }
 
   return (
     <>
          <header className='header1'>
             <figure className='header__figure1'>
-            <img className='header__img1' src={logoCineco} alt="logo" />
+            <img className='header__img1' src={logoCineco} alt="logo" onClick={inicio} />
             </figure>
 
             <nav className='header__nav1'>
@@ -42,10 +45,10 @@ const HomeAdmin = () => {
             </nav>
 
             <div className='div__perfil1'>
-                <img src="https://i0.wp.com/sonria.com/wp-content/uploads/2016/08/2165947w620.jpg?fit=620%2C348&ssl=1" alt="administrador" />
+                <img src="https://img.freepik.com/foto-gratis/retrato-joven-mujer-rubia-piel-bronceada-ropa-moda_144627-47360.jpg?w=2000" alt="administrador" />
                 <div className='div__perfil-dos1'>
-                    <h2 className='perfil__titulo1'>nombre</h2>
-                    <span className='perfil__nombre1'>View profile</span>
+                    <h2 className='perfil__titulo1'>Maria paulina</h2>
+                    <span className='perfil__nombre1'>ver perfil</span>
                 </div>
                 
             </div>
