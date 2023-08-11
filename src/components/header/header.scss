@@ -13,6 +13,7 @@
     justify-content: space-between;
     padding: 0 5rem;
     z-index: -1;
+    font-family: Arial, sans-serif;
 
     &__figure{
         height: 10rem;
@@ -110,15 +111,14 @@
         margin-bottom: 7rem;
     
         &__figure{
-            height: 5rem;
-
+            height: 3rem;
         }
     
         &__img{
-            height: 4rem;
+            height: 3rem;
             margin-top: 0;
             position: relative;
-            left: 18rem;
+            left: 17rem;
         }
     
         &__nav{
@@ -160,12 +160,13 @@
     
     .label{
         margin-bottom: 0.5rem;
-        margin-top: 0.5rem;
-        font-size: 20px;
+        margin-top: 1rem;
+        font-size: 16px;
         position: relative;
         top: 5rem;
-        right: 9rem;
+        right: 5rem;
         color: black;
+        text-align: center;
    
     }
     
@@ -179,15 +180,17 @@
         font-size: 12px;
         position: relative;
         top: 5rem;
-        right: 9rem;
+        right: 5rem;
     }
     .menu__div{
-        display: block; 
+        display: block;
     }
 
     .menu{
         font-size: 20px;
         margin-right: 1rem;
+        position: relative;
+        bottom: 0.1rem; 
     }
 
 }

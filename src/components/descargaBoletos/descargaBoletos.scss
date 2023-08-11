@@ -85,3 +85,49 @@
     }
 
 }
+
+@media(max-width:500px){
+    .page__boletos{
+        display: flex;
+        flex-wrap:wrap;
+        justify-content: center
+    }
+    
+    .btn__backHome{
+        width: 7rem;
+        height: 2rem;
+        margin-left: 3rem;
+        margin-top: 0;
+        border-radius: 10px;
+        border: none;
+        background-color: gray;
+        cursor: pointer;
+        color: white;
+        position: relative;
+        right: 9rem;
+        bottom: 3rem;
+        
+    }
+    
+    .boletos{
+        width: 80%;
+        margin: 2rem;
+        padding: 2rem;
+        padding-top: 0rem;
+        height: auto;
+        border-radius: 10px;
+        background-color: rgb(17, 17, 73);
+        color: rgb(196, 196, 196);
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    
+    
+        &__figure{
+            display: none;
+        }
+
+    
+    }
+}

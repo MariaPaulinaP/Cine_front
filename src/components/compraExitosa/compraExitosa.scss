@@ -136,3 +136,55 @@
     }
 
 }
+
+@media(max-width: 500px){
+    .page__compraExitosa{
+        display: flex;
+        flex-direction: column;
+        gap: 3rem; 
+        margin: 6rem 3rem;
+    }
+    
+    .compra__exitosa{
+        margin-top: 2rem;
+    }
+    
+    .info__titulo{
+        display: flex;
+        justify-content: space-between;
+        font-size: 13px;
+    }
+    
+    .info__compra{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin-left: 2rem;
+
+        &__article{
+            display: flex;
+            flex-direction: row;
+            gap:1rem;
+        }
+    
+    
+        &__tarjeta{
+            width: 30px;
+        }
+    }
+    
+    .compraFinal{
+        border: none;
+        border-radius: 20px;
+        background-color: rgb(238, 238, 238);
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        gap: 2rem;
+        width: 90%;
+        padding: 1.5rem;
+        // margin-top: 3rem;
+    
+    }
+
+}

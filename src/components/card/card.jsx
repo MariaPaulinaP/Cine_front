@@ -101,6 +101,7 @@ const Card = () => {
               alt=""
               className="imagen__pelicula"
             />
+            <div className="div__responsive">
             <br />
             <h3>{pelicula.title}</h3>
             <br />
@@ -113,6 +114,9 @@ const Card = () => {
             }
             </p>
             <span className="container__publico">Para todo publico</span>
+
+            </div>
+            
             
     
           </div>

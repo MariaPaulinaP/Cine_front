@@ -158,7 +158,7 @@ function SeleccionAsientos() {
         <br />
         <hr />
 
-        <div
+        <div className="div__sillasGeneradas"
           style={{
             display: "flex",
             flexDirection: "column",
